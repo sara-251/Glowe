@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowé</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="homee">
+        <div class="navbar">
+            <h1>Glowé</h1>
+            <nav>
+                <ul>
+                    <li><a href='home.html'>Home</a></li>
+                    <li><a href='shop.html'>Shop</a></li>
+                    <li><a href='about.html'>About us</a></li>
+                </ul>
+            </nav>
+            <div class="iconss">
+                <i class="fa-solid fa-person"></i>
+                <div class="cart-icon-wrapper">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span> 
+                </div>
+            </div>
+        </div>
+        <div class="mainn">
+            <div class="left1">
+                <h2>
+                    <span>Nourish</span>
+                    <span>Glow</span>
+                    <span>Repeat</span>
+                </h2>
+                <p>High-Performance skincare with clean ingredients for your natural skin</p>
+            </div>
+            <div class="right1">
+                <img src="images/main photo.jpg">
+            </div>
+            <button id="shopp">Shop Now</button>
+        </div>
+        <div class="cards1">
+            <div class="card1">
+                <i class="fa-solid fa-leaf"></i>
+                <p>Clean Ingredients</p>
+            </div>
+            <div class="card2">
+                <i class="fa-solid fa-microscope"></i>
+                <p>Dermatologist tested</p>
+            </div>
+            <div class="card3">
+                <i class="fa-solid fa-heart"></i>
+                <p>Cruelty free</p>
+            </div>
+            <div class="card4">
+                <i class="fa-solid fa-users"></i>
+                <p>For all skin types</p>
+            </div>
+        </div>
+        <div class="best">
+            <h3>Best sellers</h3>
+            <div class="carddss">
+                <div class="cardd1">
+                    <img src="images/Vitamin C.jpg">
+                    <h4>Vitamin C serum</h4>
+                    <p>$350</p>
+                </div>
+                <div class="cardd2">
+                    <img src="images/Gentle Facial Cleanser.jpg">
+                    <h4>Facial Clesnser</h4>
+                    <p>$190</p>
+                </div>
+                <div class="cardd3">
+                    <img src="images/Niacinamide.jpg">
+                    <h4>Niacinamide serum</h4>
+                    <p>$320</p>
+                </div>
+                <div class="cardd4">
+                    <img src="images/Hydrating Day Cream.jpg">
+                    <h4>Moisturizing cream</h4>
+                    <p>$275</p>
+                </div>
+            </div>
+        </div>
+        <div class="aboutt">
+            <div class="le">
+                <img src="images/OIG2.jpg">
+            </div>
+            <div class="ri">
+                <h2>Healthy skin always in</h2>
+                <p>Clean,honest ingredients made for every skin type</p>
+                <a href="about.html">Learn our story <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="codee">
+            <div class="ll">
+                <h4>Get 10% off your first order.... Join our newsletter.</h4>
+            </div>
+            <div class="rr">
+                <input id="en" placeholder="Enter your email">
+                <button id="su">Subscribe</button>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-col brand">
+                    <h3>Glowé</h3>
+                    <p>Clean skincare for your natural glow.</p>
+                    <div class="socials">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <a href="#">Serums</a>
+                    <a href="#">Cleansers</a>
+                    <a href="#">Moisturizers</a>
+                    <a href="#">Sunscreen</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about">About us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">FAQs</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in touch</h4>
+                    <p><i class="fa-solid fa-envelope"></i> support@glowe.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +20 100 000 0000</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Glowé. All rights reserved.</p>
+            </div>
+        </footer>
+        <div class="modal-overlay" id="cartModal">
+    <div class="cart-box">
+        <span class="modal-close" id="closeCart">&times;</span>
+        <div id="cartMainView">
+            <h3>Your Cart</h3>
+            <div id="cartItemsList"></div>
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            <div class="cart-actions">
+                <button id="continueShopping">Continue shopping</button>
+                <button id="confirmOrder">Confirm order</button>
+            </div>
+        </div>
+        <div id="cartSuccessView" class="cart-success" style="display:none;">
+            <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+            <h3>Thank you!</h3>
+            <p>Your order has been placed successfully.</p>
+            <button id="closeSuccessBtn">Continue shopping</button>
+        </div>
+    </div>
+        </div>
+        </div>
+        <div class="modal-overlay" id="accountModal">
+        <div class="account-box">
+            <span class="modal-close" id="closeAccount">&times;</span>
+            <h3>My Account</h3>
+            <p><strong>Name:</strong> <span id="accName"></span></p>
+            <p><strong>Email:</strong> <span id="accEmail"></span></p>
+            <div id="addressSection"></div>
+            <button id="logoutBtn">Logout</button>
+        </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>

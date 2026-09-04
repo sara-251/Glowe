@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glowé</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <h1>Glowé</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About us</a></li>
+        </ul>
+      </nav>
+      <div class="iconss">
+        <i class="fa-solid fa-person"></i>
+        <div class="cart-icon-wrapper">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-container">
+      <aside class="sidebar">
+        <p class="sidebar-title">Categories</p>
+        <p class="category-item active" data-category="all">All</p>
+        <p class="category-item" data-category="creams">
+          Creams & moisturizers
+        </p>
+        <p class="category-item" data-category="serums">Serums & oils</p>
+        <p class="category-item" data-category="cleansers">
+          Cleansers, toners & sunscreen
+        </p>
+        <p class="sidebar-title price-title">Price</p>
+        <input type="range" id="priceRange" min="0" max="600" value="600" />
+        <div class="price-labels">
+          <span>$0</span>
+          <span id="priceValue">$600</span>
+        </div>
+        <button id="applyFilters">Apply filters</button>
+      </aside>
+
+      <main class="products-section">
+        <div class="products-header">
+          <p class="products-title">Shop all products</p>
+          <span class="sort-label">Sort by: Popular</span>
+        </div>
+        <div class="products-grid" id="productsGrid">
+          <p id="loadingMsg">Loading products...</p>
+        </div>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-col brand">
+          <h3>Glowé</h3>
+          <p>Clean skincare for your natural glow.</p>
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#">Serums</a>
+          <a href="#">Cleansers</a>
+          <a href="#">Moisturizers</a>
+          <a href="#">Sunscreen</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about">About us</a>
+          <a href="#">Contact</a>
+          <a href="#">FAQs</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <p><i class="fa-solid fa-envelope"></i> support@glowe.com</p>
+          <p><i class="fa-solid fa-phone"></i> +20 100 000 0000</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Glowé. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div class="modal-overlay" id="productModal">
+      <div class="modal-box">
+        <span class="modal-close" id="closeModal">&times;</span>
+
+        <div class="modal-image-col">
+          <img id="modalImage" src="" alt="" />
+        </div>
+
+        <div class="modal-info-col">
+          <p class="modal-category" id="modalCategory">Skincare</p>
+          <h3 id="modalName"></h3>
+          <p class="modal-price" id="modalPrice"></p>
+          <p class="modal-desc" id="modalDescription"></p>
+
+          <div class="modal-qty-row">
+            <div class="qty-selector">
+              <button class="qty-btn minus" id="modalMinus">-</button>
+              <span class="qty-value" id="modalQty">1</span>
+              <button class="qty-btn plus" id="modalPlus">+</button>
+            </div>
+            <button class="add-to-cart-btn" id="modalAddToCart">
+              Add to cart
+            </button>
+          </div>
+
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Ingredients <span>+</span>
+              </button>
+              <div class="accordion-body">
+                <p>
+                  Aqua, Glycerin, Niacinamide, Panthenol, Sodium Hyaluronate,
+                  Citric Acid, Phenoxyethanol.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">
+                How to use <span>+</span>
+              </button>
+              <div class="accordion-body">
+                <p>
+                  Apply a small amount to clean skin morning and night. Follow
+                  with moisturizer and SPF during the day.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay" id="cartModal">
+    <div class="cart-box">
+        <span class="modal-close" id="closeCart">&times;</span>
+        <div id="cartMainView">
+            <h3>Your Cart</h3>
+            <div id="cartItemsList"></div>
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            <div class="cart-actions">
+                <button id="continueShopping">Continue shopping</button>
+                <button id="confirmOrder">Confirm order</button>
+            </div>
+        </div>
+        <div id="cartSuccessView" class="cart-success" style="display:none;">
+            <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+            <h3>Thank you!</h3>
+            <p>Your order has been placed successfully.</p>
+            <button id="closeSuccessBtn">Continue shopping</button>
+        </div>
+    </div>
+    </div>
+    <div class="modal-overlay" id="accountModal">
+        <div class="account-box">
+            <span class="modal-close" id="closeAccount">&times;</span>
+            <h3>My Account</h3>
+            <p><strong>Name:</strong> <span id="accName"></span></p>
+            <p><strong>Email:</strong> <span id="accEmail"></span></p>
+            <div id="addressSection"></div>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

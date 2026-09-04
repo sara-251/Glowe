@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glowé</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="sign-up">
+      <header>
+        <h1>Glowé</h1>
+      </header>
+      <div class="lef">
+        <div class="top">
+          <h2>Create Your Account</h2>
+          <p>Join Glowé and start your healthy skin journey</p>
+        </div>
+        <form class="sign">
+          <label for="full">Full Name</label>
+          <input type="text" id="full" required />
+          <label for="email">Email</label>
+          <input type="email" id="Email" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" required />
+          <label for="confirm">Confirm Password</label>
+          <input type="password" id="confirm" required />
+          <div class="termss">
+            <input type="checkbox" id="terms" required />
+            <label for="terms">I agree to the terms and conditions</label>
+          </div>
+          <button type="submit" id="create">Create Account</button>
+          <p id="signupError" class="error-msg"></p>
+        </form>
+
+        <h3>Already have an account? <a href="login.html">Login</a></h3>
+      </div>
+      <div class="rig">
+        <img src="images/header.jpg" />
+      </div>
+    </div>
+    <script src="authh.js"></script>
+  </body>
+</html>
