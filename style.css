@@ -15,6 +15,7 @@ body {
 }
 .sign-up {
   width: 800px;
+  min-height: 550px;    
   border-radius: 10px;
   background-color: #f3f1eb;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
@@ -118,6 +119,7 @@ header h1 {
   font-weight: normal;
   text-align: center;
   margin-top: 15px;
+  padding: 8px 0; 
 }
 .lef h3 a {
   color: var(--secondary-color);
